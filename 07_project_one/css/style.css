@@ -1,0 +1,38 @@
+.outer{
+    height: 100%;
+    width: 100%;
+    /* align-content: center; */
+    text-align: center;
+}
+
+.button{
+    font-size: 50px;
+    margin: 2px;
+    padding: 10px 38px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+#red{
+    background-color: red;
+}
+#blue{
+    background-color: blue;
+}
+#black{
+    background-color: black;
+}
+#white{
+    background-color: white;
+}
+#yellow{
+    background-color: yellow;
+}
+#purple{
+    background-color: purple;
+}
+#green{
+    background-color: green;
+}
+.first-heading, .paragraph{
+    margin: 40px;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(138, 125, 125);">
+    <h1>Images</h1>
+    <ul id="images">
+        <li><img width="100px" src="./apple.png" alt="apple" id="apple"></li>
+        <li><img width="100px" src="./capsicum2.png" alt="capsicum" id="capsicum"></li>
+        <li><img width="100px" src="./dairy2.png" alt="dairy" id="dairy"></li>
+        <li><img width="100px" src="./pizza1.jpg" alt="pizza1" id="pizza1"></li>
+        <li><a href="https://google.com" id="google">go toGoogle</a></li>
+    </ul>
+
+
+
+    <script>
+        // direct onclick is not best approach , addEventListener() is best approach
+
+        // document.getElementById('apple').onclick = function(){
+        //     alert("This is an Apple")
+        // }
+        // document.getElementById('dairy').addEventListener('click', function(){
+        //     alert("this is a Dairy Milk Chocolate")
+        // }, false) // false is default
+
+        // attachEvent()
+        // jQuery -> on
+
+        // some properties or operations of addEventListener object
+        //------- learn deeply these topics.----------------
+        // type, timestamp, defaultPrevented
+        // target , toElement, srcElement, currentTarget,
+        // clintX, clintY, screenX, screenY
+        //altkey, ctrlkey, shiftksy, keyCode
+
+        // document.getElementById('dairy').addEventListener('click', function(e){
+            // console.log(e)
+            // e.stopPropagation() // it is stop propogation means it will work only one event
+            // e.preventDefault() // it is used to stop exicute some code
+        // },false)
+        // event propogation 
+        // false is bubling event execute child first to parent last
+        // true is capturing event execute parent first to child last
+
+
+        document.querySelector("#images").addEventListener('click', function(e){
+            // console.log(e.target.parentNode)
+            let removeIt = e.target.parentNode
+            // console.log(e.target.tagName)
+            if(e.target.tagName == 'IMG'){
+                console.log(e.target.tagName)
+                console.log(e.target.id)
+                // removeIt.remove()
+                removeIt.parentNode.removeChild(removeIt)
+            }
+        })
+
+    </script>
+</body>
+</html>
